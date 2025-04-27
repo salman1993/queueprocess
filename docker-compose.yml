@@ -7,6 +7,16 @@ services:
       POSTGRES_DB: mydb
     ports:
       - "5432:5432"
+  
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - ADMINER_DESIGN=pepa-linha-dark
+    depends_on:
+      - db
 
   redis:
     image: redis:7

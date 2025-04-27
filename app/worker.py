@@ -17,6 +17,8 @@ logger.info("Worker started, listening to queue...")
 
 while True:
     job_data = queue.dequeue()
+    # Simulate a lag in processing
+    time.sleep(3)
     if job_data:
         item_id = job_data["item_id"]
         
